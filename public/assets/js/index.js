@@ -33,9 +33,6 @@ const hide = (elem) => {
 let activeNote = {};
 
 /////////////////////////////////////
-// COMPLETE /////////////////////////
-/////////////////////////////////////
-
 const getNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
@@ -62,9 +59,6 @@ const deleteNote = (id) =>
   });
 
 /////////////////////////////////////
-/////////////////////////////////////
-/////////////////////////////////////
-
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
@@ -95,8 +89,6 @@ const handleNoteSave = () => {
 };
 
 /////////////////////////////////////
-// COMPLETE /////////////////////////
-/////////////////////////////////////
 // Delete the clicked note
 const handleNoteDelete = (e) => {
   e.stopPropagation();
@@ -112,12 +104,7 @@ const handleNoteDelete = (e) => {
     renderActiveNote();
   });
 };
-/////////////////////////////////////
-/////////////////////////////////////
-/////////////////////////////////////
 
-/////////////////////////////////////
-// COMPLETE /////////////////////////
 /////////////////////////////////////
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
@@ -130,13 +117,6 @@ const handleNoteView = (e) => {
 };
 
 /////////////////////////////////////
-/////////////////////////////////////
-/////////////////////////////////////
-
-/////////////////////////////////////
-// COMPLETE /////////////////////////
-/////////////////////////////////////
-
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
   activeNote = {};
@@ -144,9 +124,6 @@ const handleNewNoteView = (e) => {
 };
 
 /////////////////////////////////////
-/////////////////////////////////////
-/////////////////////////////////////
-
 const handleRenderSaveBtn = () => {
   if (!noteTitle.value.trim() || !noteText.value.trim()) {
     hide(saveNoteBtn);
@@ -197,7 +174,6 @@ const renderNoteList = async (notes) => {
     }
 
     // RECENT DATE ------------------------------------------------------
-
     const dateEl = document.createElement('div');
     dateEl.classList.add('recent-date');
     dateEl.innerText = date;
@@ -209,7 +185,6 @@ const renderNoteList = async (notes) => {
     liEl.append(textSnipEl);
 
     // RECENT NOTE TITLE ------------------------------------------------------
-
     // click event to recognize which note was clicked to delete
     $('#recent-notes').click(function (e) {
       const localNameEl = e.target.localName;
