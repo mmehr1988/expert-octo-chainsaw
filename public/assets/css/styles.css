@@ -1,0 +1,190 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rampart+One&display=swap');
+
+/* ----------------------------------------------------------- */
+/* MEHDI ----------------------------------------------------- */
+/* ----------------------------------------------------------- */
+/* CSS Variables */
+:root {
+  --black: #111;
+  --white: #fff;
+
+  --body-background: antiquewhite;
+
+  --nav-header-current: #1a77b4;
+  --nav-header-active: #2a9dba;
+
+  --icon-add-current: #20c997;
+  --icon-add-active: #198754;
+
+  --icon-save-current: #e36bae;
+  --icon-save-active: #b34180;
+
+  --icon-delete-current: #df2e2e;
+  --icon-delete-active: #b61919;
+
+  --recent-notes-current: #69ccae;
+  --recent-notes-hover: #4f9983;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+  font-family: 'Indie Flower', cursive;
+}
+
+.save-note {
+  display: none;
+}
+
+/* ----------------------------------------------------------- */
+/* MEHDI ----------------------------------------------------- */
+/* ----------------------------------------------------------- */
+
+/* ICONS ------------------------------------------------------------------------- */
+.icon-add {
+  font-size: 3.2rem;
+  display: block;
+  color: var(--icon-add-current);
+}
+
+.icon-add:active {
+  color: var(--icon-add-active);
+  transform: scale(1.2);
+  transition: 0.15s transform;
+}
+
+.icon-add:hover {
+  color: var(--icon-add-active);
+  transition: 0.15s color;
+}
+
+.icon-save {
+  font-size: 3.2rem;
+  display: block;
+  color: var(--icon-save-current);
+}
+
+.icon-save:active {
+  color: var(--icon-save-active);
+  transform: scale(1.2);
+  transition: 0.15s transform;
+}
+
+.icon-save:hover {
+  color: var(--icon-save-active);
+  transition: 0.15s color;
+}
+
+.icon-delete {
+  font-size: 1.7rem;
+  display: block;
+  color: var(--icon-delete-current);
+  cursor: pointer;
+}
+
+.icon-delete:active {
+  color: var(--icon-delete-active);
+  transform: scale(1.2);
+  transition: 0.15s transform;
+}
+
+.icon-delete:hover {
+  color: var(--icon-delete-active);
+  transition: 0.15s color;
+}
+
+/* ACTIVE NOTE ------------------------------------------------------------------------- */
+#note-title {
+  font-size: 3rem;
+  color: #6c757d;
+}
+
+#note-content {
+  font-size: 1.4rem;
+  color: #6c757d;
+}
+
+/* LOADING PAGE -------------------------------------------------------------------------- */
+.load-header {
+  font-size: 4rem;
+  color: var(--nav-header-current);
+  cursor: pointer;
+  font-family: 'Rampart One', cursive;
+}
+
+/* Recent Notes ----------------------------------------------------------- */
+.recent-notes {
+  background-color: var(--recent-notes-current);
+  cursor: pointer;
+}
+
+.recent-notes:last-child {
+  margin-bottom: 0rem !important;
+}
+
+.recent-notes:active {
+  transform: scale(1.1);
+  transition: 0.15s transform;
+}
+
+.recent-notes:hover {
+  background-color: var(--recent-notes-hover);
+  color: black;
+  transition: 0.15s background-color;
+}
+
+.recent-title {
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color: black;
+}
+
+.recent-date {
+  font-size: 1.2rem;
+  color: black;
+}
+
+/* RESUABLE ITEMS --------------------------------------------------------------- */
+
+.column-divider {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1.4vh;
+}
+
+/* NAV NOTES -------------------------------------------------------------------------- */
+.nav-header {
+  font-size: 3.2rem;
+  color: var(--nav-header-current);
+  cursor: pointer;
+  font-family: 'Rampart One', cursive;
+}
+
+.nav-header:active {
+  color: var(--nav-header-active);
+  transform: scale(1.2);
+  transition: 0.15s transform;
+}
+
+.nav-header:hover {
+  color: var(--nav-header-active);
+  transition: 0.15s color;
+}
+
+/* FOOTER ------------------------------------------------------------------------- */
+
+footer {
+  font-size: 1.2rem;
+}
+
+/* MEDIA QUERIES ------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 767px) {
+  .icon-btn {
+    padding-bottom: 0.5rem !important;
+  }
+}

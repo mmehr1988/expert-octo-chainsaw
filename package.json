@@ -1,0 +1,27 @@
+{
+  "name": "expert-octo-chainsaw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmehr1988/expert-octo-chainsaw.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmehr1988/expert-octo-chainsaw/issues"
+  },
+  "homepage": "https://github.com/mmehr1988/expert-octo-chainsaw#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

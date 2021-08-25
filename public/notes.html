@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <!-- CSS Style Sheet -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+    <title>Note Taker</title>
+  </head>
+
+  <body class="container pt-5">
+    <nav class="d-flex flex-column flex-md-row align-items-center justify-content-between border-bottom">
+      <a class="navbar-brand nav-header p-0" href="/">Note Taker </a>
+      <div class="icons">
+        <button class="btn p-0 icon-btn save-note" id="btn-save"><ion-icon name="save-outline" class="icon-save"></ion-icon></button>
+        <button class="btn p-0 icon-btn new-note" id="btn-add"><ion-icon name="add-outline" class="icon-add"></ion-icon></button>
+      </div>
+    </nav>
+
+    <main class="row pt-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between">
+        <!-- ---------------------------------------- SIDE BAR ---------------------------------- -->
+
+        <div class="col">
+          <article class="card">
+            <div class="col-12 p-2">
+              <div class="d-grid gap-2">
+                <div id="recent-notes" class="list-group list-group-flush border-bottom scrollarea"></div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- COLUMN DIVIDER-------------------------------- -->
+        <div class="column-divider"></div>
+        <!-- ---------------------------------------- NOTES INPUT START ---------------------- -->
+        <div class="col-md-8">
+          <div class="row">
+            <ul class="list-unstyled">
+              <div class="mb-2">
+                <input type="email" id="note-title" class="note-title form-control" placeholder="Note Title" maxlength="28" type="text" />
+              </div>
+              <div class="mb-3">
+                <textarea id="note-content" class="note-textarea form-control" rows="10" placeholder="Note Content"></textarea>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--------------------------------------------------------------->
+    <!-- SCRIPTS -->
+    <!--------------------------------------------------------------->
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- ION ICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.1/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/ionicons@5.5.1/dist/ionicons/ionicons.js"></script>
+    <!-- MOMENT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <!-- JS SCRIPT -->
+    <script src="./assets/js/index.js"></script>
+  </body>
+</html>
