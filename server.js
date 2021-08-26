@@ -29,8 +29,7 @@ app.get('/notes', (req, res) => {
 });
 
 app.get('/api/notes', (req, res) => {
-  console.info(`${req.method} request received for notes`);
-  return res.json(JSON.parse(fs.readFileSync('./db/db.json')));
+  res.json(JSON.parse(fs.readFileSync('./db/db.json')));
 });
 
 // POST Route for a new UX/UI note
