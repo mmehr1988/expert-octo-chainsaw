@@ -57,8 +57,7 @@ app.post('/api/notes', (req, res) => {
       body: newNote,
     };
 
-    // To show the post request in console if successful
-    res.json(console.log(response));
+    res.json(response);
   } else {
     res.error('Error in adding Note');
   }
