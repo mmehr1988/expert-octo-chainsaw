@@ -29,12 +29,14 @@ app.get('/notes', (req, res) => {
 });
 
 app.get('/api/notes', (req, res) => {
+  console.info(`${req.method} request received for notes`);
   return res.json(JSON.parse(fs.readFileSync('./db/db.json')));
 });
 
 // POST Route for a new UX/UI note
 app.post('/api/notes', (req, res) => {
-  console.log(req.body);
+  // Log that a POST request was received
+  console.info(`${req.method} request received to submit note`);
 
   const { title, text, textSnip, date } = req.body;
 
@@ -50,7 +52,12 @@ app.post('/api/notes', (req, res) => {
     notesData.push(newNote);
     fs.writeFileSync('./db/db.json', JSON.stringify(notesData));
 
-    res.json(`Note added successfully 🚀`);
+    const response = {
+      status: 'success',
+      body: newFeedback,
+    };
+
+    res.json(response);
   } else {
     res.error('Error in adding Note');
   }
