@@ -54,7 +54,7 @@ app.post('/api/notes', (req, res) => {
 
     const response = {
       status: 'success',
-      body: newFeedback,
+      body: newNote,
     };
 
     res.json(response);
