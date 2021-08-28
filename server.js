@@ -19,25 +19,28 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // GET Route for Loading Page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
+app.get('/', async (req, res) => {
+  const user = await path.join(__dirname, 'public/index.html');
+  res.sendFile(user);
 });
 
 // GET Route for Notes Page
-app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/notes.html'));
+app.get('/notes', async (req, res) => {
+  const user = await path.join(__dirname, 'public/notes.html');
+  res.sendFile(user);
 });
 
-app.get('/api/notes', (req, res) => {
-  res.json(JSON.parse(fs.readFileSync('./db/db.json')));
+app.get('/api/notes', async (req, res) => {
+  const user = await fs.readFileSync('./db/db.json');
+  res.send(user);
 });
 
 // POST Route for a new UX/UI note
-app.post('/api/notes', (req, res) => {
+app.post('/api/notes', async (req, res) => {
   // Log that a POST request was received
   console.info(`${req.method} request received to submit note`);
 
-  const { title, text, textSnip, date } = req.body;
+  const { title, text, textSnip, date } = await req.body;
 
   if (req.body) {
     const newNote = {
@@ -63,12 +66,19 @@ app.post('/api/notes', (req, res) => {
 });
 
 // DELETE Route for a specific note
-app.delete('/api/notes/:id', (req, res) => {
-  const noteId = req.params.id;
-  const newArray = notesData.filter((data) => data.id != noteId);
+app.delete('/api/notes/:id', async (req, res) => {
+  console.info(`${req.method} request received to delete note`);
+  const noteId = await req.params.id;
+  const newArray = await notesData.filter((data) => data.id != noteId);
   notesData = newArray;
   fs.writeFileSync('./db/db.json', JSON.stringify(newArray));
-  res.json(newArray);
+
+  const response = {
+    status: 'success',
+    body: newArray,
+  };
+
+  res.json(response);
 });
 
 // To Start Our App On PORT

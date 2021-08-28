@@ -150,9 +150,11 @@ const handleRenderSaveBtn = () => {
 // click event to recognize which note was clicked to delete
 const recentNoteClick = (e) => {
   const localNameEl = e.target.localName;
-  if (localNameEl !== 'ion-icon') {
+  const noNotes = e.target.innerText;
+
+  if (localNameEl !== 'ion-icon' && noNotes !== 'No saved Notes') {
     handleNoteView(e);
-  } else if (localNameEl === 'ion-icon') {
+  } else if (localNameEl === 'ion-icon' && noNotes !== 'No saved Notes') {
     handleNoteDelete(e);
   }
 };
@@ -170,25 +172,15 @@ const renderNoteList = async (notes) => {
   // Returns HTML element with or without a delete button
   const createLi = (text, date, textSnip, delBtn = true) => {
     const liEl = document.createElement('li');
-    liEl.classList.add('list-group-item');
-    liEl.classList.add('my-1');
-    liEl.classList.add('py-3');
-    liEl.classList.add('lh-tight');
-    liEl.classList.add('mt-0');
-    liEl.classList.add('recent-notes');
+    liEl.classList.add('list-group-item', 'my-2', 'py-3', 'lh-tight', 'mt-0', 'rounded', 'recent-notes');
 
     // RECENT NOTE TITLE -------------------------------------------------
     const titleEl = document.createElement('div');
-    titleEl.classList.add('d-flex');
-    titleEl.classList.add('flex-column');
-    titleEl.classList.add('flex-md-row');
-    titleEl.classList.add('align-items-center');
-    titleEl.classList.add('justify-content-between');
+    titleEl.classList.add('d-flex', 'flex-column', 'flex-md-row', 'align-items-center', 'justify-content-between');
     liEl.append(titleEl);
 
     const spanEl = document.createElement('span');
-    spanEl.classList.add('list-item-title');
-    spanEl.classList.add('recent-title');
+    spanEl.classList.add('list-item-title', 'recent-title');
     spanEl.innerText = text;
 
     titleEl.append(spanEl);
